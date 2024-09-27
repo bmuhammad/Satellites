@@ -28,9 +28,9 @@
           if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
             let response = this.response;
             console.log("response", response)
-            console.log(response.status);
-            console.log(response.statusText);
-            console.log(response.data);
+            console.log(this.response.status);
+            console.log(this.response.statusText);
+            console.log(this.response.data);
           }
         };
         req.open("GET", URL);
