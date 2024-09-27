@@ -26,10 +26,14 @@
         console.log("req", req)
         req.onreadystatechange = function () {
           if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+
+console.log("insed condition")
             let response = JSON.parse(this.response);
             console.log(response.status);
             console.log(response.statusText);
             console.log(response.data);
+
+
           }
         };
         req.open("GET", URL);
