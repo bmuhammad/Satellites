@@ -22,6 +22,8 @@
         console.log("GET ALL");
 
         let req = new XMLHttpRequest();
+
+        console.log("req", req)
         req.onreadystatechange = function () {
           if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
             let response = JSON.parse(this.response);
