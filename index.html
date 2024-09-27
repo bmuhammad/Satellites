@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Types of Satellites</title>
+  </head>
+
+  <body>
+    <h1>Satellites</h1>
+    <button onclick="getAllSatellites">Get All Satellites</button>
+
+    <script>
+      "use strict";
+
+      const URL = "https://restapi-nine-kappa.vercel.app/";
+
+      function getAllSatellites() {
+        console.log("GET ALL");
+
+        let req = new XMLHttpRequest();
+        req.onreadystatechange = function () {
+          if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            let response = JSON.parse(this.response);
+            console.log(response.status);
+            console.log(response.statusText);
+            console.log(response.data);
+          }
+        };
+        req.open("GET", URL);
+        req.send();
+      }
+    </script>
+  </body>
+</html>
